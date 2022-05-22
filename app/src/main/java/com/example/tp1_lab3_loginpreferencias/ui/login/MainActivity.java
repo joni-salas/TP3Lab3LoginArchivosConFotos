@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         btRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), RegistroActivity.class);
+                Intent i = new Intent(getApplicationContext(), RegistroActivity.class).putExtra("dato","registro");
                 startActivity(i);
 
             }

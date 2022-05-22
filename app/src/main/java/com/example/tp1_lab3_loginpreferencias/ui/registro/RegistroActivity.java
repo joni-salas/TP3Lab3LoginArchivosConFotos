@@ -80,8 +80,26 @@ public class RegistroActivity extends AppCompatActivity {
 
             }
         });
-        vm.leerDatos();
-        inicializarVista();
+
+        Bundle bun;
+        bun = getIntent().getExtras();
+        String res = "login";
+
+        if(bun != null){
+            res = bun.getString("dato");
+            if(res.equals("registro")){
+                inicializarVista();
+                etNombre.setText("");
+                etApellido.setText("");
+                etDni.setText("");
+                etEmail.setText("");
+                etPass.setText("");
+            }
+        }else{
+            vm.leerDatos();
+            inicializarVista();
+        }
+
     }
 
     public void inicializarVista(){
